@@ -18,3 +18,5 @@ Cow
 Eagle
 Sheep
 Elephant
+Hippo
+Crocodile

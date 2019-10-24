@@ -20,3 +20,6 @@ Sheep
 Elephant
 Hippo
 Crocodile
+
+We have decided to use JS Node to create our server.
+

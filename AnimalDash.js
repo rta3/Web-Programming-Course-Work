@@ -1,17 +1,15 @@
 var canvas = document.getElementById("gameScreen");
 var ctx = canvas.getContext("2d");
 
-//Variables for sprites 
+//Variables for player construction.
 var player;
-
-//Variables for palyer construction.
-var playerWidth = 100;
-var playerHeight = 100;
+var playerWidth = 67;
+var playerHeight = 23;
 var playerPositionX = (canvas.width - playerWidth);// X and Y given same initial location.
 var playerPositionY = (canvas.width - playerWidth);
 var playerVelocityX = 5;
 var playerVelocityY = 5;
-
+var playerRotation = 0;
 
 //Variables for keyboard inputs.
 var rightPressed;
@@ -67,7 +65,7 @@ document.addEventListener('keyup', keyUphandler,false);
 
 class SpriteConstuctor 
 {
-    constructor(width, height, color, imagePosX, imagePosY, type) 
+    constructor(width, height, color, imagePosX, imagePosY, type, imageRotation) 
     {
         this.type = type;
         if (type == "image") 
@@ -79,7 +77,9 @@ class SpriteConstuctor
         this.height = height;
         this.imagePosX = playerPositionX;
         this.imagePosY = playerPositionY;
- 
+        ctx.translate(this.playerPositionX, this.playerPositionY);
+        this.angle = playerRotation;
+        ctx.rotate(this.angle);
         ctx.drawImage(this.image, this.imagePosX, this.imagePosY, this.width, this.height);
 
 
@@ -87,14 +87,15 @@ class SpriteConstuctor
 }
 
 
+//draw player function, could be useful for testing.
 
-function drawPlayer()// Draw function fraws the player.
+function drawPlayer()
 {
     
     ctx.beginPath();
-    ctx.rect(playerPositionX, playerPositionY ,playerWidth,playerHeight);
-    //ctx.fillStyle = "red";
-    //ctx.fill();
+    ctx.rect(playerPositionX, playerPositionY ,playerWidth, playerHeight);
+    ctx.fillStyle = "red";
+    ctx.fill();
     ctx.closePath();
   
 }
@@ -102,27 +103,32 @@ function drawPlayer()// Draw function fraws the player.
 function draw() 
 {
     ctx.clearRect(0,0,canvas.width, canvas.height);//Clears the canvas every refresh.
-    
-
+    player = new SpriteConstuctor(67,20,"DogSprite.png", playerPositionY, playerVelocityY, "image", playerRotation);
     if(rightPressed)
     {
         playerPositionX += playerVelocityX;
+        player.angle += Math.PI/2;//90
     }
     else if(leftPressed)
     {
         playerPositionX -= playerVelocityX;
+        playerRotation.angle += Math.PI;//270
+        
     }
     else if(upPressed)
     {
         playerPositionY -= playerVelocityY;
+        playerRotation.angle += 0;
     }
     else if(downPressed)
     {
         playerPositionY += playerVelocityY;
+        playerRotation.angle += (Math.PI)*(1.5);//180
     }
-    
-    drawPlayer();
-    player = new SpriteConstuctor(67,20,"DogSprite.png", playerPositionY, playerVelocityY, "image");
+        
+    //drawPlayer();
+    player = new SpriteConstuctor(67,20,"DogSprite.png", playerPositionY, playerVelocityY, "image", playerRotation);
+   
     requestAnimationFrame(draw);
 }
 

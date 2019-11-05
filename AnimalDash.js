@@ -1,17 +1,20 @@
 var canvas = document.getElementById("gameScreen");
 var ctx = canvas.getContext("2d");
 
+//Variables for palyer construction.
 var playerWidth = 100;
 var playerHeight = 100;
-var playerXPosition = (canvas.width - playerWidth)/2;
+var playerXPosition = (canvas.width - playerWidth);
 var playerVelocityX = 5;
 var playerVelocityY = 5;
 
+//Variables for keyboard inputs.
 var rightPressed;
-var leftpressed;
+var leftPressed;
 var upPressed;
 var downPressed;
 
+//Adds key board events ot handle player movements
 function keyDownHandler(event)
 {
     if(event.keyCode == 39)
@@ -38,7 +41,8 @@ function keyUphandler(event)
 
 document.addEventListener('keydown',keyDownHandler,false);
 document.addEventListener('keyup', keyUphandler,false);
-function drawPlayer()
+
+function drawPlayer()// Draw function fraws the player.
 {
     ctx.beginPath();
     ctx.rect(playerXPosition, canvas.height - playerHeight,playerWidth,playerHeight);
@@ -50,19 +54,19 @@ function drawPlayer()
 function draw() 
 {
     ctx.clearRect(0,0,canvas.width, canvas.height);//Clears the canvas every refresh.
-    drawPlayer();
+    
 
     if(rightPressed)
     {
         playerXPosition += playerVelocityX;
     }
-    else if (leftPressed)
+    else if(leftPressed)
     {
-        playerVelocityX -= playerVelocityX;
+        playerXPosition -= playerVelocityX;
     }
+    drawPlayer();
 
-
-    requestAnimationFrame(Draw);
+    requestAnimationFrame(draw);
 }
 
 requestAnimationFrame(draw);

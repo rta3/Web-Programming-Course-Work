@@ -4,7 +4,8 @@ var ctx = canvas.getContext("2d");
 //Variables for palyer construction.
 var playerWidth = 100;
 var playerHeight = 100;
-var playerXPosition = (canvas.width - playerWidth);
+var playerPositionX = (canvas.width - playerWidth);// X and Y given same initial location.
+var playerPositionY = (canvas.width - playerWidth);
 var playerVelocityX = 5;
 var playerVelocityY = 5;
 
@@ -25,6 +26,16 @@ function keyDownHandler(event)
     {
         leftPressed = true;
     }
+    else if(event.keyCode == 40)
+    {
+        //Down
+        downPressed = true;
+    }
+    else if(event.keyCode == 38)
+    {
+        //Up
+        upPressed = true;
+    }
 }
 
 function keyUphandler(event)
@@ -37,6 +48,16 @@ function keyUphandler(event)
     {
         leftPressed = false;
     }
+    else if(event.keyCode == 40)
+    {
+        //Down
+        downPressed = false;
+    }
+    else if(event.keyCode == 38)
+    {
+        //Up
+        upPressed = false;
+    }
 }
 
 document.addEventListener('keydown',keyDownHandler,false);
@@ -45,7 +66,7 @@ document.addEventListener('keyup', keyUphandler,false);
 function drawPlayer()// Draw function fraws the player.
 {
     ctx.beginPath();
-    ctx.rect(playerXPosition, canvas.height - playerHeight,playerWidth,playerHeight);
+    ctx.rect(playerPositionX, playerPositionY ,playerWidth,playerHeight);
     ctx.fillStyle = "red";
     ctx.fill();
     ctx.closePath();
@@ -58,12 +79,21 @@ function draw()
 
     if(rightPressed)
     {
-        playerXPosition += playerVelocityX;
+        playerPositionX += playerVelocityX;
     }
     else if(leftPressed)
     {
-        playerXPosition -= playerVelocityX;
+        playerPositionX -= playerVelocityX;
     }
+    else if(upPressed)
+    {
+        playerPositionY -= playerVelocityY;
+    }
+    else if(downPressed)
+    {
+        playerPositionY += playerVelocityY;
+    }
+
     drawPlayer();
 
     requestAnimationFrame(draw);

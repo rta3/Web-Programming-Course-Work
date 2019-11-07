@@ -1,12 +1,14 @@
 var canvas = document.getElementById("gameScreen");
 var ctx = canvas.getContext("2d");
 
+var track;
+
 //Variables for player construction.
 var player;
 var playerWidth = 67;
 var playerHeight = 23;
-var playerPositionX = (canvas.width - playerWidth);// X and Y given same initial location.
-var playerPositionY = (canvas.width - playerWidth);
+var playerPositionX = (canvas.width/2);// X and Y given same initial location.
+var playerPositionY = (canvas.height/2);
 var playerVelocityX = 5;
 var playerVelocityY = 5;
 var playerRotation = 0;
@@ -60,8 +62,8 @@ function keyUphandler(event)
     }
 }
 
-document.addEventListener('keydown',keyDownHandler,false);
-document.addEventListener('keyup', keyUphandler,false);
+document.addEventListener('keydown', keyDownHandler,false);
+document.addEventListener('keyup', keyUphandler, false);
 
 class SpriteConstuctor 
 {
@@ -82,16 +84,30 @@ class SpriteConstuctor
         ctx.rotate(this.angle);
         ctx.drawImage(this.image, this.imagePosX, this.imagePosY, this.width, this.height);
 
-
     }
 }
 
+class trackBuilder
+{
+    constructor(width, height, color, imagePosX, imagePosY, type)
+    {
+        this.type = type;
+        if (type == "image") 
+        {
+            this.image = new Image();
+            this.image.src = color;
+        }
+        this.width = width;
+        this.height = height;
+        imagePosX = 0;
+        imagePosY = 0;
+        ctx.drawImage(this.image, this.imagePosX, this.imagePosY, this.width, this.height);
+    }
+}
 
 //draw player function, could be useful for testing.
-
 function drawPlayer()
 {
-    
     ctx.beginPath();
     ctx.rect(playerPositionX, playerPositionY ,playerWidth, playerHeight);
     ctx.fillStyle = "red";
@@ -103,16 +119,18 @@ function drawPlayer()
 function draw() 
 {
     ctx.clearRect(0,0,canvas.width, canvas.height);//Clears the canvas every refresh.
-    player = new SpriteConstuctor(67,20,"DogSprite.png", playerPositionY, playerVelocityY, "image", playerRotation);
+    track = new trackBuilder(canvas.width, canvas.height, "Track1.png", 0, 0, "image");
+    player = new SpriteConstuctor(150,45,"DogSprite.png", playerPositionX, playerPositionY, "image", playerRotation);
+    
     if(rightPressed)
     {
         playerPositionX += playerVelocityX;
-        player.angle += Math.PI/2;//90
+        player.angle += 1*Math.PI/2;//90
     }
     else if(leftPressed)
     {
         playerPositionX -= playerVelocityX;
-        playerRotation.angle += Math.PI;//270
+        playerRotation.angle += 1*Math.PI;//270
         
     }
     else if(upPressed)
@@ -123,11 +141,11 @@ function draw()
     else if(downPressed)
     {
         playerPositionY += playerVelocityY;
-        playerRotation.angle += (Math.PI)*(1.5);//180
+        playerRotation.angle += 1*(Math.PI)*(1.5);//180
     }
-        
+    
     //drawPlayer();
-    player = new SpriteConstuctor(67,20,"DogSprite.png", playerPositionY, playerVelocityY, "image", playerRotation);
+    //player = new SpriteConstuctor(67,20,"DogSprite.png", playerPositionY, playerVelocityY, "image", playerRotation);
    
     requestAnimationFrame(draw);
 }

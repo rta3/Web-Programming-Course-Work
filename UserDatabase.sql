@@ -1,5 +1,4 @@
 CREATE TABLE user_info(
-User_ID INTEGER primary key,
 UserEmail VARCHAR(40),
 Username VARCHAR(10),
 Password VARCHAR(10),

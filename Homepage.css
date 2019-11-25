@@ -7,7 +7,8 @@
 body{background-color: #C6F1F5;
      background-size: cover;
      height: 100vh;
-     background-position: left;    
+     background-position: left;
+     
 }
 
 .header{background-color: #C6F1F5;
@@ -18,10 +19,10 @@ h1{ font-size: 80px;
     color: #D4BFFF;
     text-align: center;
     opacity: 0.5;
-    text-decoration: black;
 }
 
 .navbar{text-align: center;
+
 }
 
 .navbar a{display: inline-block;
@@ -37,7 +38,7 @@ h1{ font-size: 80px;
 
 .navbar a:hover{color: white;
                 background-color: #ffebc1
-}  
+}            
 
 p{color: white;
   font-size: 60px;

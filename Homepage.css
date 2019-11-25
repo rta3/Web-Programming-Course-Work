@@ -23,3 +23,14 @@ h1{ font-size: 80px;
 
 .navbar{text-align: center;
 }
+
+.navbar a{display: inline-block;
+          text-decoration: none;
+          color:#ffebc1;
+          font-size: 20px;
+          font-family: 'Open Sans', sans-serif;
+          font-weight: 600;
+          letter-spacing: 2px;
+          padding: 15px;
+          text-transform: uppercase;        
+}

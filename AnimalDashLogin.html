@@ -11,10 +11,13 @@
      <!--add jquery-->
     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
    <script>
+       <!--makes only the signup form visible when webpage opens-->
         $(document).ready(function(){
             $(".loginform").hide();
             $(".login").css("background-color", "none");
-            
+           
+         <!--when the login button is pressed, signup form disappears and the login button goes yellow while the 
+              signup button goes to a blue background-->
         $(".login").click(function(){
              $(".signupform").hide();
             $(".loginform").show();
@@ -22,6 +25,8 @@
             $(".login").css("background", "#ffebc1");
             });
             
+         <!--when the singup button is pressed, login form disappears and the login button goes to a blue background
+            while signup goes to a yellow-->
         $(".signup").click(function(){
             $(".signupform").show();
             $(".loginform").hide();

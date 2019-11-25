@@ -38,3 +38,13 @@ h1{ font-size: 80px;
 .navbar a:hover{color: white;
                 background-color: #ffebc1
 }  
+
+p{color: white;
+  font-size: 60px;
+  font-family: 'Audiowide', cursive;
+  text-transform: uppercase;
+  background-position: center;
+  font-weight: 900;
+  padding: 200px;
+}
+

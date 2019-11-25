@@ -24,3 +24,16 @@ h1{ font-size: 80px;
 .container{width: 400px;
            margin: 70px auto;
 }
+
+.signup,
+.login{width: 50%;
+       background-color:#ffebc1;
+       color: white;
+       height: 60px;
+       float: left;
+       text-align: center;
+       cursor: pointer;
+       line-height: 60px;
+       text-transform: uppercase;
+       font-family:'Audiowide', cursive;;
+}

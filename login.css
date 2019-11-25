@@ -18,7 +18,10 @@ h1{ font-size: 80px;
     color: #D4BFFF;
     text-align: center;
     opacity: 0.5;
-    text-decoration: black;
+    text-decoration: none;
+}
+
+.header a{text-decoration: none;
 }
 
 .container{width: 400px;
@@ -70,6 +73,17 @@ h1{ font-size: 80px;
     cursor: pointer;
     border-radius: 5px;
 }
+
+.signupbtn a{
+    text-decoration: none;
+    color:#ccffb5;
+}
+
+.loginbtn a{
+    text-decoration: none;
+    color:#ccffb5;
+}
+
 
 .loginbtn{font-family: 'Open Sans', sans-serif;
        color: #ccffb5;

@@ -58,3 +58,9 @@ p a:hover{color: #ccffb5;
           background-color: #f5c1bf;
 }
 
+.fa {background-position: center;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 30px;
+}

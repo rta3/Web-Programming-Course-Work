@@ -10,3 +10,14 @@ body{background-color: #C6F1F5;
      background-position: left;
      
 }
+
+.header{background-color: #C6F1F5;
+}
+
+h1{ font-size: 80px;
+    font-family: 'VT323', monospace;
+    color: #D4BFFF;
+    text-align: center;
+    opacity: 0.5;
+    text-decoration: black;
+}

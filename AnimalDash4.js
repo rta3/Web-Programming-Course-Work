@@ -1,4 +1,6 @@
 import PlayerDrawer from './PlayerClass';
+import TrackDrawer from './TrackClass';
+import CheckPoints from './CheckpointMaker';
 
 var canvas = document.getElementById("gameScreen");
 var ctx = canvas.getContext("2d");
@@ -6,13 +8,16 @@ var ctx = canvas.getContext("2d");
 //Level Components
 var track = new Image();
 track.src = "Track1.png";
+var firstTrack;
+
+var checkPnt = new CheckPoints();
 
 //Variables for player construction.
 var player;
 var playerWidth = 67;
 var playerHeight = 23;
-var playerPositionX;// X and Y given same initial location.
-var playerPositionY;
+var player1PositionX;// X and Y given same initial location.
+var player1PositionY;
 var playerVelocityX = 5;
 var playerVelocityY = 5;
 var playerRotation = 0;
@@ -70,50 +75,43 @@ function keyUphandler(event)
 document.addEventListener('keydown', keyDownHandler,false);
 document.addEventListener('keyup', keyUphandler, false);
 
-/*
-class SpriteConstuctor 
-{
-
-    constructor(width, height, color, imagePosX, imagePosY, type) 
-    {
-        this.type = type;
-        if (type == "image") 
-        {
-            this.image = new Image();
-            this.image.src = color;
-        }
-        
-        this.width = width;
-        this.height = height;
-        this.imagePosX = playerPositionX;
-        this.imagePosY = playerPositionY;
-        this.angle = playerAngle;
-        ctx.save();
-        ctx.translate(this.playerPositionX, this.playerPositionY);
-        ctx.rotate(this.angle);
-        ctx.drawImage(this.image, this.imagePosX, this.imagePosY, this.width, this.height);
-        ctx.restore();
-
-    }
-}
-*/
-/* Draw player function, could be useful for testing.
-function drawPlayer()
+function drawCheckPoints()
 {
     ctx.beginPath();
-    ctx.rect(playerPositionX, playerPositionY ,playerWidth, playerHeight);
+    ctx.rect(100, 100 ,80, 80);
+    ctx.fillStyle = "lime";
+    ctx.fill();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.rect(500, 100 ,80, 80);
+    ctx.fillStyle = "blue";
+    ctx.fill();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.rect(80, 550 ,80, 80);
+    ctx.fillStyle = "yellow";
+    ctx.fill();
+    ctx.closePath();
+    
+
+    ctx.beginPath();
+    ctx.rect(550, 550 ,80, 80);
     ctx.fillStyle = "red";
     ctx.fill();
     ctx.closePath();
   
 }
-*/
+
 
 function draw() 
 {
     ctx.clearRect(0,0,canvas.width, canvas.height);// Clears the canvas every refresh.
     ctx.drawImage(track, 0,0, 700,700);
-    player = new PlayerDrawer(150,45,"CowSprite.png", playerPositionX, playerPositionY, "image");
+    //firstTrack = new TrackDrawer(700,700,"Track1.png", 0, 0, "image");
+    drawCheckPoints();
+    player = new PlayerDrawer(150,45,"CowSprite.png", player1PositionX, player1PositionY, "image");
         
       
     requestAnimationFrame(draw);

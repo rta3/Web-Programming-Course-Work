@@ -1,15 +1,12 @@
-
-
-h1 {
-  color:#D4BFFF;
-  font-family: 'Long Cang', cursive;
-  font-size: 40px
+*{margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
 }
 
-path {
-  fill: transparent;
-}
-
-text {
-  fill: #FF9800;
+body{background-color: #C6F1F5;
+     background-size: cover;
+     height: 100vh;
+     background-position: left;
+     
 }

@@ -8,10 +8,14 @@ body{background-color: #C6F1F5;
      background-size: cover;
      height: 100vh;
      background-position: left;
-     
+
 }
 
 .header{background-color: #C6F1F5;
+}
+
+.header a{
+    text-decoration: none;
 }
 
 h1{ font-size: 80px;
@@ -19,13 +23,18 @@ h1{ font-size: 80px;
     color: #D4BFFF;
     text-align: center;
     opacity: 0.5;
-    text-decoration: black;
+    text-decoration: none;
+}
+
+.header a{text-decoration: none;
 }
 
 .playerselection{width: 100%;
                 height: 550px;
                 background: none;
 }
+
+
 
 .fa {background-position: center;
     padding: 10px;

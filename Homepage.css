@@ -34,3 +34,7 @@ h1{ font-size: 80px;
           padding: 15px;
           text-transform: uppercase;        
 }
+
+.navbar a:hover{color: white;
+                background-color: #ffebc1
+}  

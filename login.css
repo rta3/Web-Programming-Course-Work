@@ -37,3 +37,12 @@ h1{ font-size: 80px;
        text-transform: uppercase;
        font-family:'Audiowide', cursive;;
 }
+
+.signupform,
+.loginform{background-color: white;
+           box-sizing: border-box;
+           padding: 40px;
+           clear: both;
+           width: 100%;
+           height: 400px;
+}

@@ -84,3 +84,29 @@ h1{ font-size: 80px;
        cursor: pointer;
        border-radius: 5px;
 }
+
+.fa {background-position: center;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 30px;
+}
+
+.fa:hover {
+  opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-youtube{
+  background: red;
+  color: white;
+}

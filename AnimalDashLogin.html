@@ -10,7 +10,32 @@
     <meta name=”viewport” content=”width=device-width, initial-scale=1″>
      <!--add jquery-->
     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-   
+   <script>
+        $(document).ready(function(){
+            $(".loginform").hide();
+            $(".login").css("background-color", "none");
+            
+        $(".login").click(function(){
+             $(".signupform").hide();
+            $(".loginform").show();
+            $(".signup").css("background", "none");
+            $(".login").css("background", "#ffebc1");
+            });
+            
+        $(".signup").click(function(){
+            $(".signupform").show();
+            $(".loginform").hide();
+            $(".login").css("background", "none");
+            $(".signup").css("background", "#ffebc1");
+        });
+
+        $(".btn").click(function(){
+            $(".input").val("");
+        });
+    });
+
+</script>
+
 <head>
 <!--name of webpage-->
 <title> Login </title>

@@ -1,0 +1,86 @@
+*{margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+body{background-color: #C6F1F5;
+     background-size: cover;
+     height: 100vh;
+     background-position: left;
+     
+}
+
+.header{background-color: #C6F1F5;
+}
+
+h1{ font-size: 80px;
+    font-family: 'VT323', monospace;
+    color: #D4BFFF;
+    text-align: center;
+    opacity: 0.5;
+}
+
+.navbar{text-align: center;
+
+}
+
+.navbar a{display: inline-block;
+          text-decoration: none;
+          color:#ffebc1;
+          font-size: 20px;
+          font-family: 'Open Sans', sans-serif;
+          font-weight: 600;
+          letter-spacing: 2px;
+          padding: 15px;
+          text-transform: uppercase;        
+}
+
+.navbar a:hover{color: white;
+                background-color: #ffebc1
+}            
+
+p{color: white;
+  font-size: 60px;
+  font-family: 'Audiowide', cursive;
+  text-transform: uppercase;
+  background-position: center;
+  font-weight: 900;
+  padding: 200px;
+}
+
+p a{background-color: white;
+    text-decoration: none;
+    color: #C6F1F5;
+    border-radius: 15px;
+}
+
+p a:hover{color: #ccffb5;
+          background-color: #f5c1bf;
+}
+
+.fa {background-position: center;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 30px;
+}
+
+.fa:hover {
+  opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-youtube{
+  background: red;
+  color: white;
+}
